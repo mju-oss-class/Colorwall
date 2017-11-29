@@ -2,6 +2,7 @@ import random
 import time
 import ascii8x8
 
+
 # A dictionary of hsv values for some common colors.
 colors = {"black":(0, 0, 0), "white":(0, 0, 1), "gray":(0, 0, 0.5),
           "red":(0, 1, 1), "blue":(0.66, 1, 1), "yellow":(0.16, 1, 1),
@@ -338,7 +339,9 @@ class LetterTest(Effect):
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        # My name
+        KONG=['J','U','N','G','H','O','O','N','K']
+        for ord in KONG:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
@@ -348,10 +351,10 @@ class LetterTest(Effect):
                     self.wall.set_pixel(x, y, background)
 
             # Color the letter.
-            ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
+            ascii8x8.draw_chr(ord, self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.1)
+            time.sleep(.5)
 
 class Bouncer(Effect):
     class Ball(object):
