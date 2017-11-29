@@ -335,10 +335,11 @@ class LetterTest(Effect):
         # Center the letters on the wall
         x_offset = int((self.wall.width - 8) / 2)
         y_offset = int((self.wall.height - 8) / 2)
+        junghun=['j','u','n','g','h','u','n','l','e','e']
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        for ord in junghun:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
@@ -348,7 +349,7 @@ class LetterTest(Effect):
                     self.wall.set_pixel(x, y, background)
 
             # Color the letter.
-            ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
+            ascii8x8.draw_chr(ord, self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
             time.sleep(.1)
