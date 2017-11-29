@@ -317,7 +317,7 @@ class Matrix(Effect):
                 timeout -= 1
             drawing = 0
 
-class LetterTest(Effect):
+class LetterTest(Effect): #이름을 보여주도록 고치기 
     """
     Cycle through the letters of the alphabet.
 
@@ -338,7 +338,8 @@ class LetterTest(Effect):
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        name_list = [72,69,79,65,69,82,73]
+        for ord in name_list :
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
@@ -349,9 +350,9 @@ class LetterTest(Effect):
 
             # Color the letter.
             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
-                              x_offset, y_offset)
+                              x_offset, y_offset) 
             self.wall.draw()
-            time.sleep(.1)
+            time.sleep(.5) # 이름 확인을 위해 0.1초에서 0.5초로 변경하였습니다.
 
 class Bouncer(Effect):
     class Ball(object):
