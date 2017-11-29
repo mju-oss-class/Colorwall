@@ -13,16 +13,16 @@ colors = {"black":(0, 0, 0), "white":(0, 0, 1), "gray":(0, 0, 0.5),
           "light gray":(0, 0, 0.75), "maroon":(0, 1, 0.5),
           "navy":(0.66, 1, 0.25)}
 
-class Effect(object): #부모클래스
-    def __init__(self, wall): 
+class Effect(object):
+    def __init__(self, wall):
         self.wall = wall
         self.wall.clear()
 
-    def run(self): #run만생성
-        pass  
+    def run(self):
+        pass
 
-class SolidColorTest(Effect): #Effect 상속
-    def run(self): #
+class SolidColorTest(Effect):
+    def run(self):
         hue = 1
         saturation = 1
         value = 1
@@ -317,16 +317,16 @@ class Matrix(Effect):
                 timeout -= 1
             drawing = 0
 
-class LetterTest(Effect): #Effect상속
+class LetterTest(Effect):
     """
     Cycle through the letters of the alphabet.
 
     Minimum wall size: 8 x 8.
     """
-    def run(self): #오버라이딩
+    def run(self):
         if self.wall.width < 8 or self.wall.height < 8:
             return
-
+        
         color = random.random()
         foreground = (color, 1, 1)
         # Make the foreground and background complementary colors.
@@ -338,8 +338,8 @@ class LetterTest(Effect): #Effect상속
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123): #354까지반복수행
-            self.wall.clear() #이름변경하는곳
+        for ord in [75,74,76,69,69]:
+            self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
             # color an 8x8 section.
@@ -351,7 +351,7 @@ class LetterTest(Effect): #Effect상속
             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.1) #0.1
+            time.sleep(.5)
 
 class Bouncer(Effect):
     class Ball(object):
