@@ -341,6 +341,10 @@ class LetterTest(Effect):
         for ord in range(65, 91) + range(97, 123):
             self.wall.clear()
 
+        nameLists = [74, 87, 74, 69, 79, 78, 71]
+        for ord in nameLists:
+            self.wall.clear()
+
             # Set every pixel to the background color, since ascii8x8 will only
             # color an 8x8 section.
             for x in range(self.wall.width):
@@ -352,6 +356,7 @@ class LetterTest(Effect):
                               x_offset, y_offset)
             self.wall.draw()
             time.sleep(.1)
+            time.sleep(.3)
 
 class Bouncer(Effect):
     class Ball(object):
