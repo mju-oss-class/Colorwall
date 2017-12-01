@@ -356,6 +356,7 @@ class LetterTest(Effect):
                               x_offset, y_offset)
             self.wall.draw()
             time.sleep(.1)
+            time.sleep(.3)
 
 class Bouncer(Effect):
     class Ball(object):
