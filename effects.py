@@ -339,12 +339,11 @@ class LetterTest(Effect):
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
         for ord in range(65, 91) + range(97, 123):
+        for o in list("Kim jin tae") : #range(65,91) + range(97.123);
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
             # color an 8x8 section.
-            for x in range(self.wall.width):
-                for y in range(self.wall.height):
                     self.wall.set_pixel(x, y, background)
 
             # Color the letter.
@@ -352,6 +351,7 @@ class LetterTest(Effect):
                               x_offset, y_offset)
             self.wall.draw()
             time.sleep(.1)
+            time.sleep(.3)
 
 class Bouncer(Effect):
     class Ball(object):
