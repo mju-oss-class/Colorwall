@@ -339,6 +339,7 @@ class LetterTest(Effect):
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
         for ord in range(65, 91) + range(97, 123):
+        for ord in [115, 151, 156, 153, 157, 157]:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
