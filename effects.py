@@ -362,7 +362,7 @@ class LetterTest(Effect):
             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.10)
+            time.sleep(.20)
 
 class Bouncer(Effect):
     class Ball(object):
