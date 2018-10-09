@@ -1,6 +1,7 @@
 # This file is adapted from the ascii8x8.py in the Allegro project
 # hosted at https://github.com/vishnubob/allegro.
 
+
 def draw_chr(ch, wall, foreground, background, x_offset=0, y_offset=0):
     """
     Draw an 8 x 8 ASCII character.
@@ -1302,4 +1303,3 @@ Font8x8 = (
     ("########")
   )
 )
-
