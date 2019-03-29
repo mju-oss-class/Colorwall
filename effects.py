@@ -317,6 +317,42 @@ class Matrix(Effect):
                 timeout -= 1
             drawing = 0
 
+# class LetterTest(Effect):
+#     """
+#     Cycle through the letters of the alphabet.
+#
+#     Minimum wall size: 8 x 8.
+#     """
+#     def run(self):
+#         if self.wall.width < 8 or self.wall.height < 8:
+#             return
+#
+#         color = random.random()
+#         foreground = (color, 1, 1)
+#         # Make the foreground and background complementary colors.
+#         background = ((color + .5) % 1, 1, 1)
+#
+#         # Center the letters on the wall
+#         x_offset = int((self.wall.width - 8) / 2)
+#         y_offset = int((self.wall.height - 8) / 2)
+#
+#         # Display upper and lower case letters. The break between 90 and 97 is
+#         # for non-letter keyboard characters.
+#         for ord in range(65, 91) + range(97, 123):
+#             self.wall.clear()
+#
+#             # Set every pixel to the background color, since ascii8x8 will only
+#             # color an 8x8 section.
+#             for x in range(self.wall.width):
+#                 for y in range(self.wall.height):
+#                     self.wall.set_pixel(x, y, background)
+#
+#             # Color the letter.
+#             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
+#                               x_offset, y_offset)
+#             self.wall.draw()
+#             time.sleep(.1)
+
 class LetterTest(Effect):
     """
     Cycle through the letters of the alphabet.
@@ -338,7 +374,9 @@ class LetterTest(Effect):
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        my_name = 'Sohn Su Min'
+        my_name_ascii = [ord(ch) for ch in my_name]
+        for ord2 in my_name_ascii:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
@@ -348,10 +386,10 @@ class LetterTest(Effect):
                     self.wall.set_pixel(x, y, background)
 
             # Color the letter.
-            ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
+            ascii8x8.draw_chr(chr(ord2), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.1)
+            time.sleep(.5)
 
 class Bouncer(Effect):
     class Ball(object):

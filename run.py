@@ -32,5 +32,5 @@ if __name__ == "__main__":
 
     for effect in effects_to_run:
         new_effect = effect(wall)
-        print new_effect.__class__.__name__
+        print(new_effect.__class__.__name__)
         new_effect.run()
