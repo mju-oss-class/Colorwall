@@ -5,9 +5,6 @@ import argparse, sys
 from wall import Wall
 import effects
 
-"""
-"""
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-w", "--width", type=int,
