@@ -335,10 +335,10 @@ class LetterTest(Effect):
         # Center the letters on the wall
         x_offset = int((self.wall.width - 8) / 2)
         y_offset = int((self.wall.height - 8) / 2)
-
+	name=[77,74,72]
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        for ord in name:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
