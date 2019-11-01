@@ -336,9 +336,8 @@ class LetterTest(Effect):
         x_offset = int((self.wall.width - 8) / 2)
         y_offset = int((self.wall.height - 8) / 2)
 
-        # Display upper and lower case letters. The break between 90 and 97 is
-        # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        # Display my initial 'SHKANG' in upper and lower case alphabets.
+        for ord in (83, 72, 75, 65, 78, 71) + (115, 104, 107, 97, 110, 103):
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
@@ -351,7 +350,7 @@ class LetterTest(Effect):
             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.1)
+            time.sleep(1)##increase sleep time 0.1s to 1s for view more definitly.
 
 class Bouncer(Effect):
     class Ball(object):
