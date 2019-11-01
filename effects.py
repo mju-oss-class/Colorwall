@@ -340,7 +340,9 @@ class LetterTest(Effect):
         # for non-letter keyboard characters.
         for ord in range(65, 91) + range(97, 123):
             self.wall.clear()
-
+        nameList=[75,83,72]
+        for ord in nameList:
+            self.wall.clear()
             # Set every pixel to the background color, since ascii8x8 will only
             # color an 8x8 section.
             for x in range(self.wall.width):
@@ -351,7 +353,7 @@ class LetterTest(Effect):
             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.1)
+            time.sleep(.4)
 
 class Bouncer(Effect):
     class Ball(object):
