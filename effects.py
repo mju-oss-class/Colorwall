@@ -327,6 +327,7 @@ class LetterTest(Effect):
         if self.wall.width < 8 or self.wall.height < 8:
             return
 
+        LeeDaHam = [76, 101, 101, 68, 97, 72, 97, 109]
         color = random.random()
         foreground = (color, 1, 1)
         # Make the foreground and background complementary colors.
@@ -338,7 +339,7 @@ class LetterTest(Effect):
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        for ord in LeeDaHam:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
@@ -351,7 +352,7 @@ class LetterTest(Effect):
             ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
-            time.sleep(.1)
+            time.sleep(.5)
 
 class Bouncer(Effect):
     class Ball(object):
