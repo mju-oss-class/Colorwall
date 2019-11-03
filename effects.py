@@ -336,6 +336,9 @@ class LetterTest(Effect):
         x_offset = int((self.wall.width - 8) / 2)
         y_offset = int((self.wall.height - 8) / 2)
 
+        name = [75, 119, 111, 110, 83, 111, 111, 110, 66, 101, 111, 109]
+        index = 0
+
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
         for ord in range(65, 91) + range(97, 123):
@@ -348,10 +351,14 @@ class LetterTest(Effect):
                     self.wall.set_pixel(x, y, background)
 
             # Color the letter.
-            ascii8x8.draw_chr(chr(ord), self.wall, foreground, background,
+            ascii8x8.draw_chr(chr(name[index]), self.wall, foreground, background,
                               x_offset, y_offset)
             self.wall.draw()
             time.sleep(.1)
+
+            index = index + 1
+            if index == 12 :
+                index = 0
 
 class Bouncer(Effect):
     class Ball(object):
