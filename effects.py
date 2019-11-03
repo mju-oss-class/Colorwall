@@ -324,6 +324,7 @@ class LetterTest(Effect):
     Minimum wall size: 8 x 8.
     """
     def run(self):
+        name=[77,105,110,83,97,110,105]
         if self.wall.width < 8 or self.wall.height < 8:
             return
 
@@ -338,7 +339,7 @@ class LetterTest(Effect):
 
         # Display upper and lower case letters. The break between 90 and 97 is
         # for non-letter keyboard characters.
-        for ord in range(65, 91) + range(97, 123):
+        for ord in name:
             self.wall.clear()
 
             # Set every pixel to the background color, since ascii8x8 will only
